@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Nourin 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                  url('https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
+      background-size: cover;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 2s ease;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      margin-bottom: 10px;
+      color: #FFDA03;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .btn.yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .btn.yes:hover {
+      background-color: #e60039;
+      transform: scale(1.1);
+    }
+
+    .btn.no {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .btn.no:hover {
+      background-color: #bbb;
+      transform: scale(1.1);
+    }
+
+    .result-message {
+      font-size: 2em;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .happy {
+      color: #ffe6f0;
+    }
+
+    .sad {
+      color: #ffaaaa;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+
+      .result-message {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="proposalBox">
+    <h1>Dear Nourin,</h1>
+    <p>
+      From the first time I saw you, my world changed in the most beautiful way.<br>
+      Your smile lights up my life, your soul completes mine.<br><br>
+      So here's my question...<br><br>
+      <strong>Will you marry me?</strong>
+    </p>
+    <div class="buttons">
+      <button class="btn yes" onclick="showMessage('happy')">Yes</button>
+      <button class="btn no" onclick="showMessage('sad')">No</button>
+    </div>
+  </div>
+
+  <script>
+    function showMessage(feeling) {
+      const box = document.getElementById('proposalBox');
+      let message = '';
+      if (feeling === 'happy') {
+        message = `<h1 class="result-message happy">I'm so happy now ☺️</h1>`;
+      } else {
+        message = `<h1 class="result-message sad">I'm gonna cry now 😢💔</h1>`;
+      }
+      box.innerHTML = message;
+    }
+  </script>
+</body>
+</html>
